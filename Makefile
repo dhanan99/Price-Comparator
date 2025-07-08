@@ -2,7 +2,7 @@
 
 VENV_NAME := comparator_venv
 CRAWL4AI_SETUP := $(VENV_NAME)/bin/crawl4ai-setup
-
+CRAWL4AI_DOCTOR := $(VENV_NAME)/bin/crawl4ai-doctor
 # Makefile for Flask + crawl4ai app with venv + UTF-8 fix
 
 PYTHON := python3
@@ -17,6 +17,7 @@ install: venv
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements.txt
 	$(CRAWL4AI_SETUP)
+	${CRAWL4AI_DOCTOR}
 
 run:
 	@echo "Activating virtualenv and starting Flask..."
