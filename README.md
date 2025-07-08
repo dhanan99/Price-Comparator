@@ -43,7 +43,7 @@ Response
 curl -X POST http://127.0.0.1:5000/search \
   -H "Content-Type: application/json" \
   -d '{"query": "iPhone 16 Pro, 128GB", "country": "US"}'
-
+```json
 {
   "country": "US",
   "query": "iPhone 16 Pro, 128GB",
