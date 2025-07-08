@@ -21,7 +21,7 @@ install: venv
 
 run:
 	@echo "Activating virtualenv and starting Flask..."
-	source $(VENV_NAME)/bin/activate && FLASK_APP=app.py FLASK_ENV=development $(VENV_NAME)/bin/flask run
+	FLASK_APP=app.py FLASK_ENV=development $(VENV_NAME)/bin/flask run
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -r {} +

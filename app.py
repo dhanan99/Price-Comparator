@@ -97,7 +97,7 @@ def refine_query_with_llm(raw_query):
         print(f"[Refinement failed]: {e}")
         return raw_query
 
-def search_with_serpapi(query, country="us", num_results=5):
+def search_with_serpapi(query, country="us", num_results=3):
     params = {
         "q": query,
         "num": num_results,
