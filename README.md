@@ -35,3 +35,31 @@ make run
 curl -X POST http://127.0.0.1:5000/search \
   -H "Content-Type: application/json" \
   -d '{"query": "iPhone 16 Pro, 128GB", "country": "US"}'
+
+
+```
+Response
+
+curl -X POST http://127.0.0.1:5000/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "iPhone 16 Pro, 128GB", "country": "US"}'
+
+{
+  "country": "US",
+  "query": "iPhone 16 Pro, 128GB",
+  "refined_query": "iPhone 16 Pro 128GB buy online",
+  "results": [
+    {
+      "price": "$999.00",
+      "url": "https://www.apple.com/shop/buy-iphone/iphone-16-pro/6.3-inch-display-128gb-black-titanium-unlocked"
+    },
+    {
+      "error": "crawl4ai error: Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://www.amazon.com/Apple-iPhone-Version-128GB-Titanium/dp/B0DHJG6JPH\", waiting until \"networkidle\"\n",
+      "url": "https://www.amazon.com/Apple-iPhone-Version-128GB-Titanium/dp/B0DHJG6JPH"
+    },
+    {
+      "price": "Price not found or error occurred: Page.wait_for_selector: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"span.as-price-currentprice\") to be visible\n",
+      "url": "https://www.apple.com/shop/buy-iphone/iphone-16-pro"
+    }
+  ]
+}
